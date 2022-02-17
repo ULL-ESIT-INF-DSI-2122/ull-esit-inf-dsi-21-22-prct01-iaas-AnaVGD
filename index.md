@@ -91,20 +91,18 @@ ssh usuario@10.6.129.86
 Nos saldrá el siguiente mensaje al que introduciremos ***yes***
 ![Mensaje](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-26-10.png?raw=true)
 
-Tras esto nos pedir nuestra contraseña (la nueva)
+Tras esto nos pedirá nuestra contraseña (la nueva)
 ![ssh](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-49-47.png?raw=true)
 <br />
 
 
 Luego de realizar las configuración previas ahora podemos modificar el nombre de host de la maquina virtual, de la siguiente manera.
-
 ![nombre de host](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-52-19.png?raw=true)
 
 Como podemos ver en la imagen he cambiado el nombre del host de la maquina **ubuntu** por **iaas-dsi-AnaVGD**. Ademas debemos realizar cambios en el fichero host. 
-
 ![fichero host](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-55-15.png?raw=true)
 
-Como se observa en en la imagen cambiamos el nombre ubuntu por **iaas-dsi-AnaVGD**.
+Como se observa en en la imagen cambiamos el nombre **ubuntu** por **iaas-dsi-AnaVGD**.
 <br />
 
 Antes que nada actualizamos el software de la máquina.
@@ -116,7 +114,7 @@ Ahora nos disponemos a reiniciar la maquina
 <br />
 
 
-A continuación, modificare el fichero host de mi maquina local para incluir información de conexión a la maquina virtual, de forma que no tenga que recordare la IP de la maquina virtual.
+A continuación, modificare el fichero host de mi maquina local para incluir información de conexión a la maquina virtual, de forma que no tenga que recordar la IP de mi maquina virtual.
 ![Host antes](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-21-58.png?raw=true)
 
 ![Host despues](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-22-08.png?raw=true)
@@ -131,7 +129,6 @@ Tras haber generado las claves ejecuto el comando `ssh-copy-id usuario@iaas-ds` 
 <br />
 
 Siguiendo la instrucciones que vemos en la imagen introducimos `ssh 'usuario@iaas-dsi-AnaVGD'` para realizar el inicio de sesión en la maquina virtual
-
 ![ssh](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-45-58.png?raw=true)
 
 Como podemos observar he accedido a la maquina virtual sin necesidad de introducir ninguna contraseña y también vemos que el prompt de la maquina virtual ha cambiado por `iaas-dsi-AnaVG`
@@ -152,7 +149,7 @@ Genero las claves pública-privada en mi maquina virtual, del mismo modo como lo
 ## Instalación de git y Node.js en la máquina virtual del IaaS
 <br />
 
-Instalo git en mi maquina virtual 
+Instalo git en mi máquina virtual 
 ![git](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-00-21.png?raw=true)
 <br />
 
@@ -160,20 +157,20 @@ Posteriormente configuro git ejecutando los siguientes comandos
 ![configuro git](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-01-23.png?raw=true)
 
 
-A continuación configuro el prompt de la terminal para que aparezca la rama actual en la que me encuentro cuando accedo a algún directorio que resulta estar asociado a un repositorio git. Por lo que descrago el script git prompt [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh)
+A continuación configuro el prompt de la terminal para que aparezca la rama actual en la que me encuentro, cuando accedo a algún directorio que resulta estar asociado a un repositorio git. Por lo que descargo el script [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh)
 ![git prompt](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-06-55.png?raw=true)
 
-Como pueden observar lo que hice fue a partir del script [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh) lo modifique añadiendoles las siguientes dos lineas al final
+Como pueden observar lo que hice fue a partir del script [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh) añadí las siguientes dos lineas al final
 
 ```
 source ~/.git-prompt.sh
 PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 ```
 
-Luego ejecute el comando `exec bash -l` permitiéndome reiniciar la terminal. Podemos ver que el prompt ha cambiado.
+Luego ejecuté el comando `exec bash -l` permitiéndome reiniciar la terminal. Podemos ver que el prompt ha cambiado.
 <br />
 
-Para comprobar que el prompt muestra correctamente la rama actual de trabajo cuando accedemos a un directorio asociado a un repositorio, tengo que añadir  la clave pública de la máquina virtual en la configuración de las claves de mi GitHub, facilitándome el trabajo con los repositorios remotos y permitiéndome clonar alguno de los repositorios, por lo tanto debo copiar la clave publica de mi maquina virtual y crear una nueva SSH key en mi cuenta de GitHub copiando en ella la clave pública de mi maquina virtual.
+Para comprobar que el prompt muestra correctamente la rama actual de trabajo, debemos acceder a un directorio asociado a un repositorio, posteriormente añado la clave pública de la máquina virtual en la configuración de las claves de mi GitHub, facilitándome de este modo el trabajo con los repositorios remotos y permitiéndome clonar alguno de los repositorios, por lo tanto debo copiar la clave publica de mi maquina virtual y crear una nueva SSH key en mi cuenta de GitHub introduciendo en ella la clave pública de mi maquina virtual.
 
 ![claves de mi GitHub](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-16-32.png?raw=true)
 <br />
@@ -197,4 +194,4 @@ Como se observa he instalado nvm satisfactoriamente, por lo que a continuación 
 <br />
 <br />
 
-Tras realizar todas estas configuraciones ya tendría configurada mi maquina pera realizar las tareas de la asignatura
+Tras realizar todas estas configuraciones ya tendría configurada mi maquina pera realizar las tareas de la asignatura.
