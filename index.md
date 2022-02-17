@@ -60,12 +60,12 @@ En este apartado nos centraremos en configurara la maquina virtual en el IaaS po
 <div>
 <img src="https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%202022-02-16%20233918.png?raw=true" width="280" height="300"/>
 </div>
+<br />
 
 Posteriormente seleccionamos la maquina virtual que se nos fue asiganada para la asignatura, que en mi caso es DSI-24. 
 <div>
 <img src="https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%202022-02-17%20175245.png?raw=true" width="360" height="300"/>
 </div>
-<br />
 <br />
 
 Luego nos dirigiremos a la Consola VNC (explorador), donde introduciremos como usuario y contraseña, usuario y usuario, qu posteriormente nos pedirá que cambiemos la contraseña.
@@ -74,15 +74,12 @@ Luego nos dirigiremos a la Consola VNC (explorador), donde introduciremos como u
 
 ![Consola VNC](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-32-08.png?raw=true)
 <br />
-<br />
 
-Posteriormente de realizar esto debemos conocer la IP asignada a la interfaz de red de la máquina, por lo que debemos introducir el siguiente comando:
+A continuación de realizar esto, debemos conocer la IP asignada a la interfaz de red de la máquina, por lo que debemos introducir el siguiente comando:
 
 ```
 ifconfig -a
 ```
-<br />
-
 ![ifconfig -a](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-40-18.png?raw=true)
 
 Como se nos muestra en la imagen podemos ver que nuestra IP es `10.6.129.86`. Con esta IP ya podemos conectarnos por SSH a la máquina, de forma que en la terminal introducimos el siguiente comando.
@@ -91,7 +88,7 @@ Como se nos muestra en la imagen podemos ver que nuestra IP es `10.6.129.86`. Co
 ssh usuario@10.6.129.86
 ```
 
-Nos saldrá el siguiente mensaje al que introduciremos yes
+Nos saldrá el siguiente mensaje al que introduciremos ***yes***
 ![Mensaje](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-26-10.png?raw=true)
 
 Tras esto nos pedir nuestra contraseña (la nueva)
@@ -109,22 +106,17 @@ Como podemos ver en la imagen he cambiado el nombre del host de la maquina **ubu
 
 Como se observa en en la imagen cambiamos el nombre ubuntu por **iaas-dsi-AnaVGD**.
 <br />
-<br />
 
 Antes que nada actualizamos el software de la máquina.
-
 ![apt update](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-08-44.png?raw=true)
-<br />
 <br />
 
 Ahora nos disponemos a reiniciar la maquina
-
 ![reiniciar la maquina](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-09-52.png?raw=true)
 <br />
 
 
 A continuación, modificare el fichero host de mi maquina local para incluir información de conexión a la maquina virtual, de forma que no tenga que recordare la IP de la maquina virtual.
-
 ![Host antes](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-21-58.png?raw=true)
 
 ![Host despues](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-22-08.png?raw=true)
@@ -135,7 +127,6 @@ Configuro en mi maquina local la infraestructura de la clave pública-privada.
 ![clave pública-privada](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-24-01.png?raw=true)
 
 Tras haber generado las claves ejecuto el comando `ssh-copy-id usuario@iaas-ds` que me permite copiar mi clave pública desde la maquina local a la maquina virtual. 
-
 ![ssh-copy](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-40-05.png?raw=true)
 <br />
 
@@ -143,7 +134,7 @@ Siguiendo la instrucciones que vemos en la imagen introducimos `ssh 'usuario@iaa
 
 ![ssh](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-45-58.png?raw=true)
 
-Como podemos observar he accedido a la maquina virtual sin necesidad de introducir ninguna contraseña y también vemos que el prompt de la maquina virtual ha cambiado por `iaas-dsi-AnaVG`.
+Como podemos observar he accedido a la maquina virtual sin necesidad de introducir ninguna contraseña y también vemos que el prompt de la maquina virtual ha cambiado por `iaas-dsi-AnaVG`
 <br />
 
 A su vez, podemos cambiar el nombre de usuario *usuario* de la maquina virtual a la hora de conectarse via SSH, pudiendo iniciar una conexión SSH simplemente indicando el nombre de la máquina virtual.
@@ -154,25 +145,22 @@ A su vez, podemos cambiar el nombre de usuario *usuario* de la maquina virtual a
 <br />
 
 Genero las claves pública-privada en mi maquina virtual, del mismo modo como lo realice anteriormente
-
 ![claves pública-privada](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-58-45.png?raw=true)
 <br />
 <br />
 
 ## Instalación de git y Node.js en la máquina virtual del IaaS
+<br />
 
 Instalo git en mi maquina virtual 
-
 ![git](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-00-21.png?raw=true)
 <br />
 
 Posteriormente configuro git ejecutando los siguientes comandos 
-
 ![configuro git](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-01-23.png?raw=true)
 
 
 A continuación configuro el prompt de la terminal para que aparezca la rama actual en la que me encuentro cuando accedo a algún directorio que resulta estar asociado a un repositorio git. Por lo que descrago el script git prompt [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh)
-
 ![git prompt](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-06-55.png?raw=true)
 
 Como pueden observar lo que hice fue a partir del script [git prompt](https://github.com/git/git/blob/45fe28c951c3e70666ee4ef8379772851a8e4d32/contrib/completion/git-prompt.sh) lo modifique añadiendoles las siguientes dos lineas al final
@@ -189,27 +177,22 @@ Para comprobar que el prompt muestra correctamente la rama actual de trabajo cua
 
 ![claves de mi GitHub](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-16-32.png?raw=true)
 <br />
-
 <br />
 
 
 Clono el repositorio de la practica
-
 ![Clonado del repo](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-31-37.png?raw=true)
 
 Como se observa en la imagen se ha clonado el repositorio de GitHub correctamente sin tener que introducir ninguna credencial, asi como accedo al directorio asociado al repositorio git y se puede ver en el prompt del sistema (entre paréntesis) la rama actual de trabajo (main)
 <br />
-<br />
 
 Instalo el Node Version Manager (nvm), [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm.git), el gestor de versiones de Node.js, este me permite la ejecución de código desarrollado en JavaScript y variantes.
-
 ![Node Version Manager](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-39-33.png?raw=true)
 <br />
 <br />
 
 
 Como se observa he instalado nvm satisfactoriamente, por lo que a continuación instalo la versión más reciente de Node.js , en mi caso ya lo tenia instalado:
-
 ![Node.js](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2020-41-20.png?raw=true)
 <br />
 <br />
