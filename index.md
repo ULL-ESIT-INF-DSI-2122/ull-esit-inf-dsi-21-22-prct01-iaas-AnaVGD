@@ -9,5 +9,5 @@ El objetivo de esta practicas es canfigurar la maquina virual disponibles en el 
 
 En este aparatdo nos centraremos en configurara la maquina virtual en el IaaS por lo qu eprimero debemos acceder al servicion IaaS de la ULL
 
-![Inicio IaaS](https://github.com/AnaVGD/Imagenes/blob/bbdd117d2dbccc7ca255aec7f895dc62620e09b8/Captura%20de%20pantalla%202022-02-16%20233918.png)
+![Inicio IaaS](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct01-iaas-AnaVGD/blob/1c1a0c41d30a3d8534855130a93f90d2de769986/imagenes/img1.png)
 
