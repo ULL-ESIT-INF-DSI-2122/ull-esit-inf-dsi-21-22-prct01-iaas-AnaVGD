@@ -97,6 +97,7 @@ Tras esto nos pedirá nuestra contraseña (la nueva)
 
 
 Luego de realizar las configuración previas ahora podemos modificar el nombre de host de la maquina virtual, de la siguiente manera.
+
 ![nombre de host](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2018-52-19.png?raw=true)
 
 Como podemos ver en la imagen he cambiado el nombre del host de la maquina **ubuntu** por **iaas-dsi-AnaVGD**. Ademas debemos realizar cambios en el fichero host. 
