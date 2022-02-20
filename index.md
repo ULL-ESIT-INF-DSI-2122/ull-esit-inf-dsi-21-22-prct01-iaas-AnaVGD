@@ -120,7 +120,7 @@ Antes que nada actualizamos el software de la máquina.
 <br />
 
 Ahora nos disponemos a reiniciar la maquina
-
+<br />
 ![reiniciar la maquina](https://github.com/AnaVGD/Imagenes/blob/main/Captura%20de%20pantalla%20de%202022-02-17%2019-09-52.png?raw=true)
 <br />
 
